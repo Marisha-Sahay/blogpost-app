@@ -1,0 +1,8 @@
+<h1> BLOG POST </h1>
+<h3> <%= @blog.title %> </h3>
+<p> <%= @blog.post %> </p>
+
+<% if current_user && current_user.id == @blog.user_id %>
+  <li><%= link_to "Edit", "/blogs/#{@blog.id}/edit" %></li> 
+  <li><%= link_to "Delete", "/blogs/#{@blog.id}", method: :delete %></li>
+<% end %>
